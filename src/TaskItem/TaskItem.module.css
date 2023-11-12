@@ -1,0 +1,19 @@
+.taskItem {
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.taskItem > h2 {
+    font-size: 16px;
+    font-weight: normal;
+
+}
+
+.taskItem > h2 > span {
+    color: gray;
+    font-size: 14px;
+    font-weight: bold;
+}
+

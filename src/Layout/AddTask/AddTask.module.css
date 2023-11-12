@@ -1,0 +1,17 @@
+.addTaskInput {
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid rgb(199, 199, 199);
+    width: 80%;
+}
+
+.addTaskWrapper {
+    padding: 15px;
+    background-color: rgba(233, 233, 233, 0.773);
+    margin-bottom: 20px;
+}
+
+.addTaskSubmit {
+    padding: 5px;
+}
