@@ -7,15 +7,6 @@
     padding-bottom: 10px;
 }
 
-.statusList {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 25px;
-}
-
 .title {
     text-transform: capitalize;
     border-bottom: 1px solid grey;
@@ -23,7 +14,3 @@
     padding: 15px 0;
 }
 
-.selectedStatus {
-    border-bottom: 1px solid gray;
-    font-weight: bold;
-}

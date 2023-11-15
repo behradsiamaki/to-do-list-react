@@ -2,7 +2,8 @@ import "./App.css";
 import Layout from "./Layout";
 import { useState } from "react";
 import TaskItem from "./TaskItem";
-import AddTask from "./Layout/AddTask";
+import AddTask from "./AddTask";
+import Filters from "./Filters";
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -64,20 +65,33 @@ function App() {
         status: "pending",
       });
       setTasks(newTasks);
+      setNewAddTask('');
     }
   }
 
+  function handelOnclickDeleteItem(id) {
+    if(window.confirm('are you sure?')){
+      const newTasks = tasks.filter(function(item){
+        return item.id !== id;
+      })
+      setTasks(newTasks);
+    }
+  }
+
+
   return (
-    <Layout
-      title="to do list"
-      selectedStatus={selectedStatus}
-      handleOnclickStatus={handleOnclickStatus}
-      handleOnChangeInput={handleOnChangeInput}
-      newTaskTitle={newAddTask}
-      onClickSubmit={onClickSubmit}
-    >
+    <Layout title="to do list">
+      <AddTask
+        handleOnChangeInput={handleOnChangeInput}
+        onClickSubmit={onClickSubmit}
+        newTaskTitle={newAddTask}
+      />
+      <Filters
+        handleOnclickStatus={handleOnclickStatus}
+        selectedStatus={selectedStatus}
+      />
       {filterTask(tasks).map(function (item) {
-        return <TaskItem key={item.id} taskItem={item} />;
+        return <TaskItem handelOnclickDeleteItem={handelOnclickDeleteItem} key={item.id} taskItem={item} />;
       })}
     </Layout>
   );
